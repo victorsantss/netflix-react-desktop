@@ -1,7 +1,9 @@
 import { Grid } from "@mui/material";
 import * as yup from "yup";
 import { useCallback, useState } from "react";
-import { Button, Error, Input, Wrapper } from "./login.styled";
+import { Error, Wrapper } from "./login.styled";
+import Input from "../../components/input/input";
+import Button from "../../components/button/button";
 
 export default function Login() {
   const [data, setData] = useState({
@@ -20,7 +22,7 @@ export default function Login() {
     [setData]
   );
 
-  const handleSend = useCallback(async () => {
+  const handleSubmit = useCallback(async () => {
     try {
       const schema = yup.object().shape({
         email: yup.string().required().email(),
@@ -42,7 +44,7 @@ export default function Login() {
           type="email"
           name="email"
           placeholder="E-mail"
-          onChange={handleChange}
+          onChange={() => handleChange}
         />
         <Input
           type="password"
@@ -50,7 +52,7 @@ export default function Login() {
           placeholder="Senha"
           onChange={handleChange}
         />
-        <Button onClick={handleSend} type="submit">
+        <Button onClick={handleSubmit} type="submit">
           Entrar
         </Button>
         <Error>{error}</Error>
