@@ -6,6 +6,7 @@ import Input from "../../components/input/input";
 import Button from "../../components/button/button";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import Navbar from "../../components/navbar/navbar";
 
 export default function Login() {
   const [data, setData] = useState({
@@ -39,6 +40,7 @@ export default function Login() {
 
   return (
     <Wrapper container justifyContent="center" alignContent="center">
+      <Navbar />
       <Grid container item xs={2} justifyContent="center" alignContent="center">
         <Input
           type="email"
