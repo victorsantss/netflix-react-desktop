@@ -1,14 +1,17 @@
 import { Grid } from "@mui/material";
 import * as yup from "yup";
 import { useCallback, useState } from "react";
-import { Button, Error, Input, Wrapper } from "./login.styled";
+import { Wrapper } from "./login.styled";
+import Input from "../../components/input/input";
+import Button from "../../components/button/button";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 export default function Login() {
   const [data, setData] = useState({
     email: "",
     password: "",
   });
-  const [error, setError] = useState("");
 
   const handleChange = useCallback(
     ({ target }: any) => {
@@ -20,7 +23,7 @@ export default function Login() {
     [setData]
   );
 
-  const handleSend = useCallback(async () => {
+  const handleSubmit = useCallback(async () => {
     try {
       const schema = yup.object().shape({
         email: yup.string().required().email(),
@@ -28,10 +31,9 @@ export default function Login() {
       });
 
       await schema.validate(data);
-
-      setError("");
+      toast("Login success!");
     } catch (error: any) {
-      setError(error.errors[0]);
+      toast.error(<p>{error.errors[0]}</p>);
     }
   }, [data]);
 
@@ -50,10 +52,21 @@ export default function Login() {
           placeholder="Senha"
           onChange={handleChange}
         />
-        <Button onClick={handleSend} type="submit">
+        <Button onClick={handleSubmit} type="submit">
           Entrar
         </Button>
-        <Error>{error}</Error>
+        <ToastContainer
+          position="top-center"
+          theme="dark"
+          autoClose={5000}
+          hideProgressBar={false}
+          newestOnTop={false}
+          closeOnClick
+          rtl={false}
+          pauseOnFocusLoss
+          draggable
+          pauseOnHover
+        />
       </Grid>
     </Wrapper>
   );

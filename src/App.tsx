@@ -1,11 +1,15 @@
-import Login from "./screens/login/login";
-import GlobalStyles from "../src/styles/global";
+import Login from "./screens/login/login.screen";
+import GlobalStyles from "./themes/main/global-styles";
+import { ThemeProvider } from "styled-components";
+import theme from "./themes/main/theme";
 
 function App() {
   return (
     <>
-      <Login />
       <GlobalStyles />
+      <ThemeProvider theme={theme}>
+        <Login />
+      </ThemeProvider>
     </>
   );
 }
