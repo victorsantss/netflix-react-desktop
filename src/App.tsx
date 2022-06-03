@@ -1,3 +1,4 @@
+import Landing from "./screens/landing/landing";
 import Login from "./screens/login/login.screen";
 import GlobalStyles from "./themes/main/global-styles";
 import { ThemeProvider } from "styled-components";
