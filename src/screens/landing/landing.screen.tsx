@@ -1,21 +1,19 @@
-import LandingSection from "../../components/LandingSection";
+import LandingSection from "../../components/landingSection/landing_section";
 import { LandingTexts, LandingHero, LandingContainer } from "./landing.styled";
 import tvImg from "../../assets/tvImg.png";
 import mobileImg from "../../assets/mobileImg.jpg";
 import devicesImg from "../../assets/devicesImg.png";
 import kidsImg from "../../assets/kidsImg.png";
+import Navbar from "../../components/navbar/navbar";
 
 export default function Landing() {
   return (
     <LandingContainer>
+      <Navbar />
       <LandingHero>
         <LandingTexts>
           <h1>Filmes, séries e muito mais. Sem limites.</h1>
           <h2>Assista onde quiser. Cancele quando quiser.</h2>
-          <h3>
-            Pronto para assistir? Informe seu email para criar ou reiniciar sua
-            assinatura.
-          </h3>
         </LandingTexts>
       </LandingHero>
       <LandingSection

@@ -49,7 +49,4 @@ export const LandingTexts = styled.div`
     font-size: 1.6rem;
     margin: 1rem auto;
   }
-  h3 {
-    font-size: 1.2rem;
-  }
 `;

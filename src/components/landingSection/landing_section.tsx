@@ -1,4 +1,5 @@
-import { Container, LandingSectionContainer } from "./styles";
+import { Container, LandingSectionContainer } from "./landing_section.styled";
+
 
 interface LandingSectionProps {
   title: string;

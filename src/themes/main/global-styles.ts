@@ -1,11 +1,6 @@
 import { createGlobalStyle } from "styled-components";
 
-export default createGlobalStyle`
+export const GlobalStyles = createGlobalStyle`
 root {
-  font-family: 'Open Sans', sans-serif;
-}
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+    /* font-family: 'Open Sans', sans-serif; */
 }`;
