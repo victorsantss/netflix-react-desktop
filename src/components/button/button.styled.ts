@@ -7,5 +7,4 @@ export const ButtonStyled = styled.button`
   margin: 0 0 22px;
   border-radius: 5px;
   background-color: ${(props) => props.theme.palette.core.primary};
-  border: 0;
 `;
