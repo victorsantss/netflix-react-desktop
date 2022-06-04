@@ -14,6 +14,7 @@
 - [Redux](https://pt-br.reactjs.org/docs/context.html](https://redux.js.org/))
 - [Typescript](https://www.typescriptlang.org/)
 - [Yup](https://github.com/jquense/yup)
+- [React-toastify](https://fkhadra.github.io/react-toastify/introduction)
 
 <h1 align="left">⚙️ Instalação </h1>
 
