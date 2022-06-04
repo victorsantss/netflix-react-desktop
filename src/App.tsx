@@ -9,19 +9,23 @@ import { MOVIES_LIST_URL } from "./screens/movies-list/movies-list.type";
 import { LOGIN_URL } from "./screens/login/login.type";
 import { LANDING_URL } from "./screens/landing/landing.type";
 import { CssBaseline } from "@mui/material";
+import { Provider } from "react-redux";
+import store from "./store/store/store";
 
 function App() {
   return (
     <>
-      <GlobalStyles />
-      <CssBaseline />
-      <ThemeProvider theme={theme}>
-        <Routes>
-          <Route element={<Landing />} path={LANDING_URL}></Route>
-          <Route element={<Login />} path={LOGIN_URL}></Route>
-          <Route element={<MoviesList />} path={MOVIES_LIST_URL}></Route>
-        </Routes>
-      </ThemeProvider>
+      <Provider store={store}>
+        <GlobalStyles />
+        <CssBaseline />
+        <ThemeProvider theme={theme}>
+          <Routes>
+            <Route element={<Landing />} path={LANDING_URL}></Route>
+            <Route element={<Login />} path={LOGIN_URL}></Route>
+            <Route element={<MoviesList />} path={MOVIES_LIST_URL}></Route>
+          </Routes>
+        </ThemeProvider>
+      </Provider>
     </>
   );
 }

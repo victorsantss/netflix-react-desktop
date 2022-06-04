@@ -1,4 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
+import reducers from "./user.reducer";
 
 const initialState = {
   authenticated: false,
