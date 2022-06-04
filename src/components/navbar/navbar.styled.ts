@@ -14,9 +14,6 @@ export const Nav = styled.nav`
     width: 14rem;
     height: 8rem;
   }
-  a {
-    height: 36px;
-  }
   button {
     width: 5rem;
   }
