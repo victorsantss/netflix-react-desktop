@@ -45,7 +45,7 @@ $ yarn start
 
 ### 🔗 Link do projeto online
 
-[Netflix Clone](https://dtmoney-victor.netlify.app/](https://netflix-victor.netlify.app/))
+[Netflix Clone](https://netflix-victor.netlify.app/)
 
 <hr />
 
