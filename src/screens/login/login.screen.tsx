@@ -1,12 +1,13 @@
 import { Grid } from "@mui/material";
 import * as yup from "yup";
-import { useCallback, useState } from "react";
+import { ChangeEvent, useCallback, useState } from "react";
 import { Wrapper } from "./login.styled";
 import Input from "../../components/input/input";
 import Button from "../../components/button/button";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import Navbar from "../../components/navbar/navbar";
+import { Error } from "../../types/yup";
 
 export default function Login() {
   const [data, setData] = useState({
@@ -15,7 +16,7 @@ export default function Login() {
   });
 
   const handleChange = useCallback(
-    ({ target }: any) => {
+    ({ target }: ChangeEvent<HTMLInputElement>) => {
       setData((prevData) => ({
         ...prevData,
         [target.name]: target.value,
@@ -33,8 +34,8 @@ export default function Login() {
 
       await schema.validate(data);
       toast("Login success!");
-    } catch (error: any) {
-      toast.error(<p>{error.errors[0]}</p>);
+    } catch (yupError: unknown) {
+      toast.error(<p>{(yupError as Error).errors[0]}</p>);
     }
   }, [data]);
 
@@ -54,7 +55,7 @@ export default function Login() {
           placeholder="Senha"
           onChange={handleChange}
         />
-        <Button onClick={handleSubmit} type="submit">
+        <Button onClick={handleSubmit}>
           Entrar
         </Button>
         <ToastContainer
