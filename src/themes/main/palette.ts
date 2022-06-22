@@ -1,15 +1,15 @@
 const core = {
-  primary: "#E31A13",
-  secondary: "#1A1A1A",
+  primary: '#E31A13',
+  secondary: '#1A1A1A',
 };
 
 const typography = {
-  primary: "#FFFFFF",
-  contrast: "#868d96",
+  primary: '#FFFFFF',
+  contrast: '#868d96',
 };
 
 const border = {
-  default: "#E0E0E0",
+  default: '#E0E0E0',
 };
 
 export const palette = {

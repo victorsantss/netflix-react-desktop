@@ -1,5 +1,5 @@
-import { Container, LandingSectionContainer } from "./landing_section.styled";
-
+import React from 'react';
+import { Container, LandingSectionContainer } from './landing_section.styled';
 
 interface LandingSectionProps {
   title: string;
@@ -15,7 +15,7 @@ function LandingSection({ title, subtitle, image }: LandingSectionProps) {
           <h1>{title}</h1>
           <h2>{subtitle}</h2>
         </div>
-        <img src={image} alt={image}></img>
+        <img src={image} alt={image} />
       </LandingSectionContainer>
     </Container>
   );

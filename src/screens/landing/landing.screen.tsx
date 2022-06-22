@@ -1,10 +1,11 @@
-import LandingSection from "../../components/landingSection/landing_section";
-import { LandingTexts, LandingHero, LandingContainer } from "./landing.styled";
-import tvImg from "../../assets/tvImg.png";
-import mobileImg from "../../assets/mobileImg.jpg";
-import devicesImg from "../../assets/devicesImg.png";
-import kidsImg from "../../assets/kidsImg.png";
-import Navbar from "../../components/navbar/navbar";
+import React from 'react';
+import Navbar from 'components/navbar/navbar';
+import tvImg from 'assets/tvImg.png';
+import mobileImg from 'assets/mobileImg.jpg';
+import devicesImg from 'assets/devicesImg.png';
+import kidsImg from 'assets/kidsImg.png';
+import LandingSection from 'components/landingSection/landing_section';
+import { LandingTexts, LandingHero, LandingContainer } from './landing.styled';
 
 export default function Landing() {
   return (

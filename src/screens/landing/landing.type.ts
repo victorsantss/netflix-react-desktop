@@ -1,1 +1,1 @@
-export const LANDING_URL = '/'
+export const LANDING_URL = '/';

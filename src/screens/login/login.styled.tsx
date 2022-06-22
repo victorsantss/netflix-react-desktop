@@ -1,6 +1,6 @@
-import { Grid } from "@mui/material";
-import styled from "styled-components";
-import landingImg from "../../assets/landingImg.jpg";
+import { Grid } from '@mui/material';
+import styled from 'styled-components';
+import landingImg from 'assets/landingImg.jpg';
 
 export const Wrapper = styled(Grid)`
   min-height: 100vh;

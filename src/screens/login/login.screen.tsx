@@ -1,18 +1,18 @@
-import { Grid } from "@mui/material";
-import * as yup from "yup";
-import { ChangeEvent, useCallback, useState } from "react";
-import { Wrapper } from "./login.styled";
-import Input from "../../components/input/input";
-import Button from "../../components/button/button";
-import { ToastContainer, toast } from "react-toastify";
-import "react-toastify/dist/ReactToastify.css";
-import Navbar from "../../components/navbar/navbar";
-import { Error } from "../../types/yup";
+import React, { ChangeEvent, useCallback, useState } from 'react';
+import { Grid } from '@mui/material';
+import * as yup from 'yup';
+import { ToastContainer, toast } from 'react-toastify';
+import Input from 'components/input/input';
+import Button from 'components/button/button';
+import Navbar from 'components/navbar/navbar';
+import { Wrapper } from './login.styled';
+import 'react-toastify/dist/ReactToastify.css';
+import { Error } from '../../types/yup';
 
 export default function Login() {
   const [data, setData] = useState({
-    email: "",
-    password: "",
+    email: '',
+    password: '',
   });
 
   const handleChange = useCallback(
@@ -22,7 +22,7 @@ export default function Login() {
         [target.name]: target.value,
       }));
     },
-    [setData]
+    [setData],
   );
 
   const handleSubmit = useCallback(async () => {
@@ -33,7 +33,7 @@ export default function Login() {
       });
 
       await schema.validate(data);
-      toast("Login success!");
+      toast('Login success!');
     } catch (yupError: unknown) {
       toast.error(<p>{(yupError as Error).errors[0]}</p>);
     }

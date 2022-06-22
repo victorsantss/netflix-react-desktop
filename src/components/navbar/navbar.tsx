@@ -1,9 +1,10 @@
-import { Nav } from "./navbar.styled";
-import { Link, useLocation } from "react-router-dom";
-import { LOGIN_URL } from "../../screens/login/login.type";
-import netflixLogo from "../../assets/netflixLogo.png";
-import Button from "../button/button";
-import { LANDING_URL } from "../../screens/landing/landing.type";
+import React from 'react';
+import { Link, useLocation } from 'react-router-dom';
+import netflixLogo from 'assets/netflixLogo.png';
+import { Nav } from './navbar.styled';
+import { LOGIN_URL } from '../../screens/login/login.type';
+import Button from '../button/button';
+import { LANDING_URL } from '../../screens/landing/landing.type';
 
 function Navbar() {
   const location = useLocation();
@@ -12,7 +13,7 @@ function Navbar() {
       <Link to={LANDING_URL}>
         <img src={netflixLogo} alt={netflixLogo} />
       </Link>
-      {location.pathname === "/" && (
+      {location.pathname === '/' && (
         <Link to={LOGIN_URL}>
           <Button>Entrar</Button>
         </Link>

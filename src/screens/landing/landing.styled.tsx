@@ -1,5 +1,5 @@
-import styled from "styled-components";
-import landingImg from "../../assets/landingImg.jpg";
+import styled from 'styled-components';
+import landingImg from 'assets/landingImg.jpg';
 
 export const LandingContainer = styled.div`
   font-family: "Helvetica Neue", Helvetica, sans-serif;
