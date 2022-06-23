@@ -3,6 +3,7 @@ import { ThemeProvider } from 'styled-components';
 import { Route, Routes } from 'react-router-dom';
 import { CssBaseline } from '@mui/material';
 import { Provider } from 'react-redux';
+import Guard from 'components/guard/guard';
 import Landing from './screens/landing/landing.screen';
 import Login from './screens/login/login.screen';
 import { GlobalStyles } from './themes/main/global-styles';
@@ -22,7 +23,7 @@ function App() {
         <Routes>
           <Route element={<Landing />} path={LANDING_URL} />
           <Route element={<Login />} path={LOGIN_URL} />
-          <Route element={<MoviesList />} path={MOVIES_LIST_URL} />
+          <Route element={<Guard><MoviesList /></Guard>} path={MOVIES_LIST_URL} />
         </Routes>
       </ThemeProvider>
     </Provider>
