@@ -1,5 +1,6 @@
 import React, {
-  ChangeEvent, useCallback, useEffect, useState,
+  ChangeEvent, useCallback, useState,
+  useEffect,
 } from 'react';
 import { Grid } from '@mui/material';
 import * as yup from 'yup';
@@ -9,7 +10,10 @@ import Button from 'components/button/button';
 import Navbar from 'components/navbar/navbar';
 import { useDispatch, useSelector } from 'react-redux';
 import userSlice from 'store/user/user.slice';
-import { authenticated } from 'store/user/user.selector';
+import { tokenSelector } from 'store/user/user.selector';
+import { MOVIES_LIST_URL } from 'screens/movies-list/movies-list.type';
+import { USER_TOKEN_COOKIE } from 'store/user/user.type';
+import { useLocation, useNavigate } from 'react-router-dom';
 import { Wrapper } from './login.styled';
 import 'react-toastify/dist/ReactToastify.css';
 import { Error } from '../../types/yup';
@@ -21,7 +25,9 @@ export default function Login() {
   });
 
   const dispatch = useDispatch();
-  const userAuthenticated = useSelector(authenticated);
+  const token = useSelector(tokenSelector);
+  const navigate = useNavigate();
+  const from = useLocation();
 
   const handleChange = useCallback(
     ({ target }: ChangeEvent<HTMLInputElement>) => {
@@ -42,18 +48,30 @@ export default function Login() {
 
       await schema.validate(data);
 
-      dispatch(userSlice.actions.authentication(data));
       toast('Login success!');
+      dispatch(userSlice.actions.authentication(data));
     } catch (yupError: unknown) {
       toast.error(<p>{(yupError as Error).errors[0]}</p>);
     }
   }, [data]);
 
+  useEffect(() => {
+    const localToken = localStorage.getItem(USER_TOKEN_COOKIE);
+
+    if (localToken) {
+      dispatch(userSlice.actions.setData({
+        token: localToken,
+      }));
+    }
+  }, []);
+
   useEffect(
     () => {
-      console.log(userAuthenticated);
+      if (token) {
+        navigate(MOVIES_LIST_URL, { state: { from } });
+      }
     },
-    [userAuthenticated],
+    [token],
   );
 
   return (
