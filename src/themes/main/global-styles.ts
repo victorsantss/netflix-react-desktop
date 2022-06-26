@@ -1,6 +1,13 @@
 import { createGlobalStyle } from 'styled-components';
 
 export const GlobalStyles = createGlobalStyle`
-root {
-    /* font-family: 'Open Sans', sans-serif; */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    font-family: 'Open Sans', sans-serif;
+    // @ts-ignore
+    background-color: #1A1A1A;
 }`;

@@ -4,6 +4,8 @@ import { AuthPayload } from 'services/user/user.type';
 
 const authentication = (_state: User, _action: PayloadAction<AuthPayload>) => {};
 
+const logoff = (_state: User) => {};
+
 const setData = (state: User, action: PayloadAction<Data>) => {
   state.data = action.payload;
 };
@@ -16,6 +18,7 @@ const reducers = {
   setData,
   setError,
   authentication,
+  logoff,
 };
 
 export default reducers;
