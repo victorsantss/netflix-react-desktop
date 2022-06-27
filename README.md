@@ -6,6 +6,12 @@
 
 <p> Se trata de um clone do site da netflix utilizando React.js e Node.js.</p>
 
+<h1 align="left">✔️ Atualização </h1>
+Na última semana do bootcamp, foi feita a conexão a API(https://github.com/victorsantss/netflix-api), e criada a lista de Séries e Filmes.
+Adicionais:<br/>
+-Header com opção de logoff;<br/>
+-Details Page dos shows.
+
 <h1 align="left">🛠️ Tecnologias </h1>
 
 
